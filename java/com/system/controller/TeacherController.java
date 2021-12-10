@@ -1,10 +1,9 @@
 package com.system.controller;
 
-import com.system.exception.CustomException;
-import com.system.po.*;
+import com.system.po.CourseCustom;
+import com.system.po.SelectedCourseCustom;
 import com.system.service.CourseService;
 import com.system.service.SelectedCourseService;
-import com.system.service.StudentService;
 import com.system.service.TeacherService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;

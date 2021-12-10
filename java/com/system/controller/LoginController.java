@@ -37,7 +37,5 @@ public class LoginController {
                 return "redirect:/student/showCourse";
         }else throw new CustomException("请选择正确的身份登陆");
 
-
     }
-
 }

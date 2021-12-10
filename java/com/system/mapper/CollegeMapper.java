@@ -3,7 +3,6 @@ package com.system.mapper;
 import com.system.po.College;
 import com.system.po.CollegeExample;
 import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
 
 public interface CollegeMapper {

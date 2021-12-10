@@ -4,7 +4,6 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -56,8 +55,6 @@ public class CustomExceptionResolver implements HandlerExceptionResolver {
             e1.printStackTrace();
         }
         modelAndView.setViewName("error");
-
-
         return modelAndView;
     }
 }
