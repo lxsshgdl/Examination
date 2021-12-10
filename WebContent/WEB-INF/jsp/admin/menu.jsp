@@ -3,15 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 引入bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <!-- 引入JQuery  bootstrap.js-->
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <title>menu</title>
 </head>
+<body>
 <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked" id="nav">
         <li><a href="/admin/showCourse">课程管理<span class="badge pull-right"></span></a></li>
@@ -20,7 +14,8 @@
         <li><a href="/admin/userPasswordRest">账号密码重置</a></li>
         <li><a href="/admin/passwordRest">修改密码</a></li>
         <li><a href="/logout">退出系统</a></li>
-        <%--<li class="disabled"><a href="##">Responsive</a></li>--%>
     </ul>
 </div>
+</body>
+
 </html>

@@ -9,7 +9,6 @@
 </head>
 
 <body style="background: url(images/background.PNG) ; background-size:100% 100% ;background-attachment: fixed">
-
 <div class="container">
     <div class="row text-center ">
         <div class="col-md-12">

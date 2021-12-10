@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-
+	<title>passwordRest</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- 引入bootstrap -->
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
@@ -11,6 +10,7 @@
 	<script src="/js/jquery-3.2.1.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 	<!-- 顶栏 -->
 	<jsp:include page="top.jsp"></jsp:include>
@@ -63,17 +63,19 @@
 	</div>
 	</div>
 </body>
+
 <script>
     $("#nav li:nth-child(4)").addClass("active")
     function check() {
-        if(reset.oldPassword.value==""||reset.oldPassword.value==null)
+        if(reset.oldPassword.value===""||reset.oldPassword.value==null)
         {alert("请输入旧账户密码");return false;}
-        if(reset.password1.value==""||reset.password1.value==null)
+        if(reset.password1.value===""||reset.password1.value==null)
         {alert("请输入重置密码");return false;}
-        if(reset.password2.value==""||reset.password2.value==null)
+        if(reset.password2.value===""||reset.password2.value==null)
         {alert("请输入再次输入密码");return false;}
-        if(reset.password1.value != reset.password2.value)
+        if(reset.password1.value !== reset.password2.value)
         {alert("两次密码不正确");return false;}
     }
 </script>
+
 </html>
