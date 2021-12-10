@@ -1,5 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <!-- 引入JQuery  bootstrap.js-->
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
 <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked" id="nav">
         <li><a href="/admin/showCourse">课程管理<span class="badge pull-right"></span></a></li>
@@ -11,3 +23,4 @@
         <%--<li class="disabled"><a href="##">Responsive</a></li>--%>
     </ul>
 </div>
+</html>
