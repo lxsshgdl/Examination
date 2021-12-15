@@ -76,7 +76,6 @@
                                 <button class="btn btn-default btn-xs btn-danger btn-primary"
                                         onClick="location.href='/admin/removeCourse?id=${item.courseid}'">删除
                                 </button>
-                                <!--弹出框-->
                             </td>
                         </tr>
                     </c:forEach>

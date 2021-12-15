@@ -39,7 +39,6 @@
                             添加教师信息
                             <sapn class="glyphicon glyphicon-plus"/>
                         </button>
-
                     </div>
                 </div>
                 <table class="table table-bordered">
@@ -74,7 +73,6 @@
                                 <button class="btn btn-default btn-xs btn-danger btn-primary"
                                         onClick="location.href='/admin/removeTeacher?id=${item.userid}'">删除
                                 </button>
-                                <!--弹出框-->
                             </td>
                         </tr>
                     </c:forEach>
@@ -112,7 +110,6 @@
                     </c:if>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
@@ -129,12 +126,10 @@
     if (${pagingVO.curentPageNo} == ${pagingVO.totalCount}) {
         $(".pagination li:last-child").addClass("disabled")
     }
-    ;
 
     if (${pagingVO.curentPageNo} == ${1}) {
         $(".pagination li:nth-child(1)").addClass("disabled")
     }
-    ;
     </c:if>
 
     function confirmd() {
