@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/admin/editCourse.jsp" value="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/admin" />
+        <entry key="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/student/overCourse.jsp" value="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/student" />
         <entry key="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/teacher/passwordRest.jsp" value="file://$PROJECT_DIR$/WebContent/WEB-INF/jsp/teacher" />
         <entry key="file://$PROJECT_DIR$/WebContent/login.jsp" value="file://$PROJECT_DIR$/WebContent" />
       </map>

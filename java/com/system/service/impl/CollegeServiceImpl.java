@@ -18,10 +18,7 @@ public class CollegeServiceImpl implements CollegeService {
     public List<College> finAll() throws Exception {
         CollegeExample collegeExample = new CollegeExample();
         CollegeExample.Criteria criteria = collegeExample.createCriteria();
-
         criteria.andCollegeidIsNotNull();
-
-
         return collegeMapper.selectByExample(collegeExample);
     }
 }

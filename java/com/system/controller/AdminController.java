@@ -206,7 +206,7 @@ public class AdminController {
         }
         TeacherCustom teacherCustom = teacherService.findById(id);
         if (teacherCustom == null) {
-            throw new CustomException("未找到该名学生");
+            throw new CustomException("未找到该教师");
         }
         List<College> list = collegeService.finAll();
 
@@ -282,7 +282,6 @@ public class AdminController {
 
         List<TeacherCustom> list = teacherService.findAll();
         List<College> collegeList = collegeService.finAll();
-
         model.addAttribute("collegeList", collegeList);
         model.addAttribute("teacherList", list);
 
