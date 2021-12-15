@@ -90,9 +90,7 @@
                         </div>
                     </form>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
@@ -105,7 +103,6 @@
 
 <script type="text/javascript">
     $("#nav li:nth-child(2)").addClass("active")
-
     var collegeSelect = $("#college option");
     for (var i = 0; i < collegeSelect.length; i++) {
         if (collegeSelect[i].value === '${student.collegeid}') {
