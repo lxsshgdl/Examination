@@ -30,7 +30,7 @@ public class LoginController {
         //如果获取不到用户名就是登录失败，但登录失败的话，会直接抛出异常
         subject.login(token);
         if (subject.hasRole("admin")&userlogin.getRole()==0) {
-                return "redirect:/admin/showStudent";
+                return "redirect:/admin/showCourse";
         } else if (subject.hasRole("teacher")&userlogin.getRole()==1) {
                 return "redirect:/teacher/showCourse";
         } else if (subject.hasRole("student")&userlogin.getRole()==2) {
