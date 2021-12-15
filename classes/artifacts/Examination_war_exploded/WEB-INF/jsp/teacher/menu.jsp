@@ -5,6 +5,7 @@
 <head>
     <title>menu</title>
 </head>
+
 <body>
 <div class="col-md-2">
     <ul class="nav nav-pills nav-stacked" id="nav">
@@ -14,4 +15,5 @@
     </ul>
 </div>
 </body>
+
 </html>
