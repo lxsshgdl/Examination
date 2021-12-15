@@ -49,7 +49,6 @@ public class StudentServiceImpl implements StudentService {
             studentMapper.insert(studentCustoms);
             return true;
         }
-
         return false;
     }
 
@@ -60,7 +59,6 @@ public class StudentServiceImpl implements StudentService {
         //通过criteria构造查询条件
         StudentExample.Criteria criteria = studentExample.createCriteria();
         criteria.andUseridIsNotNull();
-
         return studentMapper.countByExample(studentExample);
     }
 
