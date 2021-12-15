@@ -35,7 +35,7 @@ public class AdminController {
     @RequestMapping("/showStudent")
     public String showStudent(Model model, Integer page) throws Exception {
 
-        List<StudentCustom> list = null;
+        List<StudentCustom> list;
         //页码对象
         PagingVO pagingVO = new PagingVO();
         //设置总页数
@@ -59,7 +59,7 @@ public class AdminController {
     @RequestMapping(value = "/addStudent", method = {RequestMethod.GET})
     public String addStudentUI(Model model) throws Exception {
 
-        List<College> list = collegeService.finAll();
+        List<College> list = collegeService.findAll();
 
         model.addAttribute("collegeList", list);
 
@@ -79,7 +79,8 @@ public class AdminController {
         //添加成功后，也添加到登录表
         Userlogin userlogin = new Userlogin();
         userlogin.setUsername(studentCustom.getUserid().toString());
-        userlogin.setPassword("123");
+        //初始密码和学号相同
+        userlogin.setPassword(studentCustom.getUserid().toString());
         userlogin.setRole(2);
         userloginService.save(userlogin);
 
@@ -91,19 +92,16 @@ public class AdminController {
     @RequestMapping(value = "/editStudent", method = {RequestMethod.GET})
     public String editStudentUI(Integer id, Model model) throws Exception {
         if (id == null) {
-            //加入没有带学生id就进来的话就返回学生显示页面
+            //假入没有带学生id就进来的话就返回学生显示页面
             return "redirect:/admin/showStudent";
         }
         StudentCustom studentCustom = studentService.findById(id);
         if (studentCustom == null) {
             throw new CustomException("未找到该名学生");
         }
-        List<College> list = collegeService.finAll();
-
+        List<College> list = collegeService.findAll();
         model.addAttribute("collegeList", list);
         model.addAttribute("student", studentCustom);
-
-
         return "admin/editStudent";
     }
 
@@ -112,7 +110,6 @@ public class AdminController {
     public String editStudent(StudentCustom studentCustom) throws Exception {
 
         studentService.updataById(studentCustom.getUserid(), studentCustom);
-
         //重定向
         return "redirect:/admin/showStudent";
     }
@@ -121,12 +118,11 @@ public class AdminController {
     @RequestMapping(value = "/removeStudent", method = {RequestMethod.GET} )
     private String removeStudent(Integer id) throws Exception {
         if (id == null) {
-            //加入没有带学生id就进来的话就返回学生显示页面
+            //假入没有带学生id就进来的话就返回学生显示页面
             return "admin/showStudent";
         }
         studentService.removeById(id);
         userloginService.removeByName(id.toString());
-
         return "redirect:/admin/showStudent";
     }
 
@@ -135,7 +131,6 @@ public class AdminController {
     private String selectStudent(String findByName, Model model) throws Exception {
 
         List<StudentCustom> list = studentService.findByName(findByName);
-
         model.addAttribute("studentList", list);
         return "admin/showStudent";
     }
@@ -146,7 +141,7 @@ public class AdminController {
     @RequestMapping("/showTeacher")
     public String showTeacher(Model model, Integer page) throws Exception {
 
-        List<TeacherCustom> list = null;
+        List<TeacherCustom> list;
         //页码对象
         PagingVO pagingVO = new PagingVO();
         //设置总页数
@@ -170,10 +165,8 @@ public class AdminController {
     @RequestMapping(value = "/addTeacher", method = {RequestMethod.GET})
     public String addTeacherUI(Model model) throws Exception {
 
-        List<College> list = collegeService.finAll();
-
+        List<College> list = collegeService.findAll();
         model.addAttribute("collegeList", list);
-
         return "admin/addTeacher";
     }
 
@@ -182,7 +175,6 @@ public class AdminController {
     public String addTeacher(TeacherCustom teacherCustom, Model model) throws Exception {
 
         Boolean result = teacherService.save(teacherCustom);
-
         if (!result) {
             model.addAttribute("message", "工号重复");
             return "error";
@@ -190,10 +182,10 @@ public class AdminController {
         //添加成功后，也添加到登录表
         Userlogin userlogin = new Userlogin();
         userlogin.setUsername(teacherCustom.getUserid().toString());
-        userlogin.setPassword("123");
+        //初始密码为
+        userlogin.setPassword(teacherCustom.getUserid().toString());
         userlogin.setRole(1);
         userloginService.save(userlogin);
-
         //重定向
         return "redirect:/admin/showTeacher";
     }
@@ -208,12 +200,10 @@ public class AdminController {
         if (teacherCustom == null) {
             throw new CustomException("未找到该教师");
         }
-        List<College> list = collegeService.finAll();
+        List<College> list = collegeService.findAll();
 
         model.addAttribute("collegeList", list);
         model.addAttribute("teacher", teacherCustom);
-
-
         return "admin/editTeacher";
     }
 
@@ -222,7 +212,6 @@ public class AdminController {
     public String editTeacher(TeacherCustom teacherCustom) throws Exception {
 
         teacherService.updateById(teacherCustom.getUserid(), teacherCustom);
-
         //重定向
         return "redirect:/admin/showTeacher";
     }
@@ -236,7 +225,6 @@ public class AdminController {
         }
         teacherService.removeById(id);
         userloginService.removeByName(id.toString());
-
         return "redirect:/admin/showTeacher";
     }
 
@@ -245,7 +233,6 @@ public class AdminController {
     private String selectTeacher(String findByName, Model model) throws Exception {
 
         List<TeacherCustom> list = teacherService.findByName(findByName);
-
         model.addAttribute("teacherList", list);
         return "admin/showTeacher";
     }
@@ -256,7 +243,7 @@ public class AdminController {
     @RequestMapping("/showCourse")
     public String showCourse(Model model, Integer page) throws Exception {
 
-        List<CourseCustom> list = null;
+        List<CourseCustom> list;
         //页码对象
         PagingVO pagingVO = new PagingVO();
         //设置总页数
@@ -281,7 +268,7 @@ public class AdminController {
     public String addCourseUI(Model model) throws Exception {
 
         List<TeacherCustom> list = teacherService.findAll();
-        List<College> collegeList = collegeService.finAll();
+        List<College> collegeList = collegeService.findAll();
         model.addAttribute("collegeList", collegeList);
         model.addAttribute("teacherList", list);
 
@@ -293,18 +280,16 @@ public class AdminController {
     public String addCourse(CourseCustom courseCustom, Model model) throws Exception {
 
         Boolean result = courseService.save(courseCustom);
-
         if (!result) {
             model.addAttribute("message", "课程号重复");
             return "error";
         }
 
-
         //重定向
         return "redirect:/admin/showCourse";
     }
 
-    // 修改教师信息页面显示
+    // 修改課程信息页面显示
     @RequestMapping(value = "/editCourse", method = {RequestMethod.GET})
     public String editCourseUI(Integer id, Model model) throws Exception {
         if (id == null) {
@@ -315,7 +300,7 @@ public class AdminController {
             throw new CustomException("未找到该课程");
         }
         List<TeacherCustom> list = teacherService.findAll();
-        List<College> collegeList = collegeService.finAll();
+        List<College> collegeList = collegeService.findAll();
 
         model.addAttribute("teacherList", list);
         model.addAttribute("collegeList", collegeList);
@@ -323,7 +308,7 @@ public class AdminController {
         return "admin/editCourse";
     }
 
-    // 修改教师信息页面处理
+    // 修改課程信息页面处理
     @RequestMapping(value = "/editCourse", method = {RequestMethod.POST})
     public String editCourse(CourseCustom courseCustom) throws Exception {
 
@@ -336,7 +321,7 @@ public class AdminController {
     @RequestMapping("/removeCourse")
     public String removeCourse(Integer id) throws Exception {
         if (id == null) {
-            //加入没有带教师id就进来的话就返回教师显示页面
+            //假入没有带課程id就进来的话就返回教师显示页面
             return "admin/showCourse";
         }
         courseService.removeById(id);
@@ -348,7 +333,6 @@ public class AdminController {
     private String selectCourse(String findByName, Model model) throws Exception {
 
         List<CourseCustom> list = courseService.findByName(findByName);
-
         model.addAttribute("courseList", list);
         return "admin/showCourse";
     }
@@ -357,7 +341,7 @@ public class AdminController {
 
     // 普通用户账号密码重置
     @RequestMapping("/userPasswordRest")
-    public String userPasswordRestUI() throws Exception {
+    public String userPasswordRestUI() {
         return "admin/userPasswordRest";
     }
 
@@ -366,23 +350,21 @@ public class AdminController {
     public String userPasswordRest(Userlogin userlogin) throws Exception {
 
         Userlogin u = userloginService.findByName(userlogin.getUsername());
-
         if (u != null) {
             if (u.getRole() == 0) {
-                throw new CustomException("该账户为管理员账户，没法修改");
+                throw new CustomException("该账户为管理员账户，无法修改！");
             }
             u.setPassword(userlogin.getPassword());
             userloginService.updateByName(userlogin.getUsername(), u);
         } else {
-            throw new CustomException("没找到该用户");
+            throw new CustomException("该用户不存在！");
         }
-
         return "admin/userPasswordRest";
     }
 
     // 本账户密码重置
     @RequestMapping("/passwordRest")
-    public String passwordRestUI() throws Exception {
+    public String passwordRestUI() {
         return "admin/passwordRest";
     }
 

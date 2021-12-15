@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface CollegeService {
     //查询院系
-    List<College> finAll() throws Exception;
+    List<College> findAll() throws Exception;
 
 }

@@ -12,7 +12,6 @@ public class StudentCustom extends Student {
     //选课列表
     private List<SelectedCourseCustom> selectedCourseList;
 
-
     public void setcollegeName(String collegeName) {
         this.collegeName = collegeName;
     }

@@ -35,7 +35,7 @@
                         </form>
                         <button class="btn btn-default col-md-2" style="margin-top: 20px"
                                 onClick="location.href='/admin/addStudent'">
-                            添加用户信息
+                            添加学生信息
                             <sapn class="glyphicon glyphicon-plus"/>
                         </button>
                     </div>
