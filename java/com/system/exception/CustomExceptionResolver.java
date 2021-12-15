@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *    全局异常处理器
  *    springmvc提供一个HandlerExceptionResolver接口
- *      只要实现该接口，并配置到spring 容器里，该类就能
- *      成为默认全局异常处理类
- *
- *   全局异常处理器只有一个，配置多个也没用。
+ *    只要实现该接口，并配置到spring 容器里，该类就能
+ *    成为默认全局异常处理类
+ *    全局异常处理器只有一个，配置多个也没用。
  */
 public class CustomExceptionResolver implements HandlerExceptionResolver {
 
@@ -33,18 +32,18 @@ public class CustomExceptionResolver implements HandlerExceptionResolver {
             modelAndView.addObject("message", e.getMessage());
 
         } else if (e instanceof UnknownAccountException) {
-            //用户名错误异常
+            //用户不存在异常
             modelAndView.addObject("message", "用户名不存在");
 
         } else if (e instanceof IncorrectCredentialsException) {
-            //用户名错误异常
+            //用户名密码错误异常
             modelAndView.addObject("message", "密码错误");
 
         } else {
+            //其它异常
             modelAndView.addObject("message", "您的操作有误，请看编译器后台异常信息");
 
         }
-
 
 
         Object message1 = modelAndView.getModel().get("message");

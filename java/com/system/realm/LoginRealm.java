@@ -44,7 +44,7 @@ public class LoginRealm extends AuthorizingRealm{
         }
         //通过用户名从数据库获取权限/角色信息
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-        Set<String> r = new HashSet<String>();
+        Set<String> r = new HashSet<>();
         if (role != null) {
             r.add(role.getRolename());
             info.setRoles(r);
@@ -79,8 +79,6 @@ public class LoginRealm extends AuthorizingRealm{
         }
 
         //身份验证通过,返回一个身份信息
-        AuthenticationInfo aInfo = new SimpleAuthenticationInfo(username,password,getName());
-
-        return aInfo;
+        return new SimpleAuthenticationInfo(username,password,getName());
     }
 }
