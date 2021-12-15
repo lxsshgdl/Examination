@@ -73,7 +73,7 @@
                                 <button class="btn btn-default btn-xs btn-info"
                                         onClick="location.href='/admin/editCourse?id=${item.courseid}'">修改
                                 </button>
-                                <button class="btn btn-default btn-xs btn-danger btn-primary" onclick="confirmd()"
+                                <button class="btn btn-default btn-xs btn-danger btn-primary"
                                         onClick="location.href='/admin/removeCourse?id=${item.courseid}'">删除
                                 </button>
                             </td>
