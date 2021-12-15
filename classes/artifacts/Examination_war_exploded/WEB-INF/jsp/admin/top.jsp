@@ -32,7 +32,7 @@
                                     修改个人信息
                                 </a>
                             </li>
-                            <!-分割线--->
+                            <!--分割线--->
                             <li role="presentation" class="divider"></li>
                             <li role="presentation">
                                 <a role="menuitem" tabindex="-1" href="/logout">
@@ -52,7 +52,7 @@
     Date.prototype.format = function (fmt) {
         var o = {
             "y+": this.getFullYear, //年
-            "M+": this.getMonth() + 1, //月份
+            "M+": this.getMonth() + 1, //月
             "d+": this.getDate(), //日
             "h+": this.getHours(), //小时
             "m+": this.getMinutes(), //分

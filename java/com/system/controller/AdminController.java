@@ -320,8 +320,6 @@ public class AdminController {
         model.addAttribute("teacherList", list);
         model.addAttribute("collegeList", collegeList);
         model.addAttribute("course", courseCustom);
-
-
         return "admin/editCourse";
     }
 
@@ -330,7 +328,6 @@ public class AdminController {
     public String editCourse(CourseCustom courseCustom) throws Exception {
 
         courseService.upadteById(courseCustom.getCourseid(), courseCustom);
-
         //重定向
         return "redirect:/admin/showCourse";
     }
@@ -343,7 +340,6 @@ public class AdminController {
             return "admin/showCourse";
         }
         courseService.removeById(id);
-
         return "redirect:/admin/showCourse";
     }
 
