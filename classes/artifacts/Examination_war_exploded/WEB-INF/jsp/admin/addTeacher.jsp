@@ -33,14 +33,14 @@
                             <label for="inputEmail3" class="col-sm-2 control-label">工号</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" id="inputEmail3" name="userid"
-                                       placeholder="请输入学号">
+                                       placeholder="请输入学号" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">姓名</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="inputPassword3" name="username"
-                                       placeholder="请输入姓名">
+                                       placeholder="请输入姓名" required>
                             </div>
                         </div>
                         <div class="form-group">

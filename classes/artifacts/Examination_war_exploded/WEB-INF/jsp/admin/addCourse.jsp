@@ -32,14 +32,14 @@
                             <label for="inputEmail3" class="col-sm-2 control-label">课程号</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" id="inputEmail3" name="courseid"
-                                       placeholder="请输入课程号">
+                                       placeholder="请输入课程号" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">课程名称</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="inputPassword3" name="coursename"
-                                       placeholder="请输入课程名称">
+                                       placeholder="请输入课程名称" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -55,19 +55,19 @@
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">上课时间</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="coursetime" placeholder="请输入上课时间">
+                                <input type="text" class="form-control" name="coursetime" placeholder="请输入上课时间" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword3" class="col-sm-2 control-label">上课地点</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="classroom" placeholder="上课地点">
+                                <input type="text" class="form-control" name="classroom" placeholder="上课地点" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">周数</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name="courseweek" placeholder="请输入周数">
+                                <input type="number" class="form-control" name="courseweek" placeholder="请输入周数" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -93,7 +93,7 @@
                         <div class="form-group">
                             <label for="inputEmail3" class="col-sm-2 control-label">学分：</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name="score" placeholder="请输入学分">
+                                <input type="number" class="form-control" name="score" placeholder="请输入学分" required>
                             </div>
                         </div>
                         <div class="form-group" style="text-align: center">

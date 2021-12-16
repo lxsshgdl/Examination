@@ -30,12 +30,12 @@
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                             <input type="text" class="form-control" id="username" name="username"
-                                   placeholder="你的用户名"/>
+                                   placeholder="你的用户名" required/>
                         </div>
                         <div class="form-group input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                             <input type="password" class="form-control" id="password" name="password"
-                                   placeholder="你的密码 "/>
+                                   placeholder="你的密码 " required/>
                         </div>
                         <div class="form-group checkbox row clearfix">
                             <label class="col-md-4 column checkbox-inline">
