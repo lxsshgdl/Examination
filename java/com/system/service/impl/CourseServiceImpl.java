@@ -50,9 +50,7 @@ public class CourseServiceImpl implements CourseService {
     public List<CourseCustom> findByPaging(Integer toPageNo) throws Exception {
         PagingVO pagingVO = new PagingVO();
         pagingVO.setToPageNo(toPageNo);
-
-        List<CourseCustom> list = courseMapperCustom.findByPaging(pagingVO);
-        return list;
+        return courseMapperCustom.findByPaging(pagingVO);
     }
 
     public Boolean save(CourseCustom couseCustom) throws Exception {
