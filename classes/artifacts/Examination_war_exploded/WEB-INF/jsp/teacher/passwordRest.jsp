@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group" style="text-align: center">
                             <button class="btn btn-default" type="submit">提交</button>
-                            <button class="btn btn-default">重置</button>
+                            <button class="btn btn-default" type="reset">重置</button>
                         </div>
                     </form>
                 </div>
@@ -71,15 +71,15 @@
 
     function check() {
         if (reset.oldPassword.value === "" || reset.oldPassword.value == null) {
-            alert("请输入旧账户密码");
+            alert("请输入旧密码");
             return false;
         }
         if (reset.password1.value === "" || reset.password1.value == null) {
-            alert("请输入重置密码");
+            alert("请输入新密码");
             return false;
         }
         if (reset.password2.value === "" || reset.password2.value == null) {
-            alert("请输入再次输入密码");
+            alert("请再次输入新密码");
             return false;
         }
         if (reset.password1.value !== reset.password2.value) {
