@@ -7,6 +7,7 @@
         select course.*, college.collegeName
         from course, college
         WHERE course.collegeID = college.collegeID
+        order by course.courseID
         limit #{toPageNo}, #{pageSize}
     </select>
 

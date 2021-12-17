@@ -9,6 +9,4 @@ public interface TeacherMapperCustom {
 
     //分页查询老师信息
     List<TeacherCustom> findByPaging(PagingVO pagingVO) throws Exception;
-
-    //获取
 }

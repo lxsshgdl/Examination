@@ -9,6 +9,7 @@
         select teacher.*, college.collegeName
         from teacher, college
         WHERE teacher.collegeID = college.collegeID
+        order by teacher.userID
         limit #{toPageNo}, #{pageSize}
     </select>
 </mapper>
