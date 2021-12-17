@@ -43,6 +43,7 @@
         select student.*, college.collegeName
         from student, college
         WHERE student.collegeID = college.collegeID
+        order by student.userID
         limit #{toPageNo}, #{pageSize}
     </select>
 
