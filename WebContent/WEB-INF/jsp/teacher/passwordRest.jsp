@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group" style="text-align: center">
                             <button class="btn btn-default" type="submit">提交</button>
-                            <button class="btn btn-default">重置</button>
+                            <button class="btn btn-default" type="reset">重置</button>
                         </div>
                     </form>
                 </div>
