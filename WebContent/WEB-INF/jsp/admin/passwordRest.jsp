@@ -73,15 +73,15 @@
 
     function check() {
         if (reset.oldPassword.value === "" || reset.oldPassword.value == null) {
-            alert("请输入旧账户密码");
+            alert("请输入旧密码");
             return false;
         }
         if (reset.password1.value === "" || reset.password1.value == null) {
-            alert("请输入重置密码");
+            alert("请输入新密码");
             return false;
         }
         if (reset.password2.value === "" || reset.password2.value == null) {
-            alert("请输入再次输入密码");
+            alert("请再次输入新密码");
             return false;
         }
         if (reset.password1.value !== reset.password2.value) {

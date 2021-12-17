@@ -68,11 +68,11 @@
     $("#nav li:nth-child(4)").addClass("active")
     function check() {
         if(reset.oldPassword.value===""||reset.oldPassword.value==null)
-        {alert("请输入旧账户密码");return false;}
+        {alert("请输入旧密码");return false;}
         if(reset.password1.value===""||reset.password1.value==null)
-        {alert("请输入重置密码");return false;}
+        {alert("请输入新密码");return false;}
         if(reset.password2.value===""||reset.password2.value==null)
-        {alert("请输入再次输入密码");return false;}
+        {alert("请再次输入新密码");return false;}
         if(reset.password1.value !== reset.password2.value)
         {alert("两次密码不正确");return false;}
     }
